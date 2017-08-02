@@ -19,7 +19,7 @@ RUN git clone https://github.com/root-project/root.git /root-build/root -v \
 #    && LABEL=centos7 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental /root-build/rootspi/jenkins/jk-all
 
 RUN    cd /root-build/build && cmake ../root
-RUN    cd /root-build/build && make
+RUN    cd /root-build/build && make -j3
 RUN    cd /root-build/build && make install
 
 # Start ROOT when
