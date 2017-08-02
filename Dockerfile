@@ -23,4 +23,4 @@ RUN    cd /root-build/build && make
 RUN    cd /root-build/build && make install
 
 # Start ROOT when
-CMD /root-build/build/bin/root.exe
+# CMD /root-build/build/bin/root.exe
