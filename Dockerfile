@@ -10,10 +10,10 @@ RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 RUN yum install -y libX11-devel libXpm libXpm-devel libXft-devel libXext-devel \
     && yum groupinstall -y "Development tools"
 # General build area
-RUN mkdir /root-build && mkdir /root-build/build
+RUN mkdir -P /root-build/build
 # Clone repos
 RUN git clone https://github.com/root-project/root.git /root-build/root -v \
-    && git clone https://github.com/root-project/rootspi.git /root-build/rootspi -v \
+#    && git clone https://github.com/root-project/rootspi.git /root-build/rootspi -v \
     && git clone https://github.com/root-project/roottest.git /root-build/roottest -v
 # Build ROOT
 #    && LABEL=centos7 COMPILER=native BUILDTYPE=Release EXTERNALS=docker MODE=experimental /root-build/rootspi/jenkins/jk-all
