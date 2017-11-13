@@ -1,0 +1,4 @@
+http://www.cmake.org/files/v3.4/cmake-3.4.3.tar.gz
+http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz/download
+http://www.fftw.org/fftw-3.3.4.tar.gz
+https://root.cern.ch/download/root_v6.10.06.source.tar.gz
