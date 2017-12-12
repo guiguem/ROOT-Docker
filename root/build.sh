@@ -64,7 +64,7 @@ echo 'ROOT'
 cd root/
 mkdir -p my_build
 cd my_build
-cmake -D CMAKE_INSTALL_PREFIX:PATH=${BASEDIR} -D CMAKE_INSTALL_BINDIR:PATH=${BASEDIR}/bin -D CMAKE_INSTALL_LIBDIR:PATH=${BASEDIR}/lib -D CMAKE_INSTALL_INCLUDEDIR:PATH=${BASEDIR}/include -D gnuinstall=ON -D roofit=OFF  -D builtin_gsl=OFF -D tmva=OFF ..  | tee config_log.txt
+cmake -D CMAKE_INSTALL_PREFIX:PATH=${BASEDIR} -D CMAKE_INSTALL_BINDIR:PATH=${BASEDIR}/bin -D CMAKE_INSTALL_LIBDIR:PATH=${BASEDIR}/lib -D CMAKE_INSTALL_INCLUDEDIR:PATH=${BASEDIR}/include -D gnuinstall=ON -D roofit=ON  -D builtin_gsl=ON -D tmva=ON ..  | tee config_log.txt
 make -j3                            | tee make_log.txt
 make -j3                            | tee make_log.txt
 make -j3                            | tee make_log.txt
