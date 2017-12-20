@@ -17,6 +17,15 @@ pwd
 #
 ########################################################################
 
+# python2.7
+echo "python"
+cd python
+ls
+./configure --enable-shared --prefix=${BASEDIR} | tee config_log.txt
+make -j3                                             | tee make_log.txt
+make -j3 install                                     | tee make_install_log.txt
+cd ..
+
 echo "Environment variables after installing python:"
 env
 echo `which python`
