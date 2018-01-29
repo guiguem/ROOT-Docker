@@ -2,4 +2,4 @@ https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz
 http://www.cmake.org/files/v3.4/cmake-3.4.3.tar.gz
 http://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz/download
 http://www.fftw.org/fftw-3.3.4.tar.gz
-https://root.cern.ch/download/root_v6.10.06.source.tar.gz
+https://root.cern.ch/download/root_v6.12.04.source.tar.gz
