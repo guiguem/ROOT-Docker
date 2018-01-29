@@ -17,8 +17,9 @@ wget --input-file=/dependency_urls_root.txt --output-file=wget_log.txt --tries=3
 echo "Download: complete!"
 ls
 
-tar -xf Python-2.7.12.tgz             # python
-ln -s Python-2.7.12 python
+mv Python-*.tgz Python-x.y.tgz
+tar -xf Python-x.y.tgz                # python
+ln -s Python-x.y.tgz python
 
 gunzip cmake-3.4.3.tar.gz             # cmake
 tar -xf cmake-3.4.3.tar
