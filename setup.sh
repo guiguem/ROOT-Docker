@@ -1,7 +1,5 @@
 #!/bin/sh
 
-alias python=python3
-
 export BASEDIR=/build
 
 export PATH=${BASEDIR}/bin:${PATH}
