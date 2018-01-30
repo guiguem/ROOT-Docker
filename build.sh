@@ -2,14 +2,14 @@
 
 source /setup.sh
 
-mkdir /src
 cd /src/
-pwd
 
 #echo "Environment variables:"
 #env
 echo "where are we?"
 pwd
+echo "content"
+ls -altr
 
 #######################################################################
 #
@@ -18,9 +18,8 @@ pwd
 ########################################################################
 
 # python
-echo "python"
+echo "Installing python"
 cd python
-ls
 ./configure --enable-shared --prefix=${BASEDIR} | tee config_log.txt
 make -j3                                             | tee make_log.txt
 make -j3 install                                     | tee make_install_log.txt
@@ -28,10 +27,10 @@ cd ..
 
 echo "Environment variables after installing python:"
 env
-echo `which python`
-echo `python -V`
+echo `which python3`
+echo `python3 -V`
 echo `gcc --version`
-echo `python --version`
+echo `python3 --version`
 echo `which cc`
 echo `which g++`
 echo `which ld`
@@ -44,7 +43,7 @@ echo `ldconfig -v 2>/dev/null | grep -v ^$'\t'`
 
 
 # cmake
-echo "cmake"
+echo "Installing cmake"
 cd cmake/
 ls
 ./configure  --prefix=${BASEDIR}     | tee config_log.txt
@@ -53,7 +52,7 @@ make -j3 install                     | tee make_install_log.txt
 cd ..
 
 # Boost
-echo 'Boost'
+echo 'Installing Boost'
 cd boost/
 ./bootstrap.sh --prefix=${BASEDIR} --with-libraries=date_time,filesystem,program_options,system,thread | tee bootstrap_log.txt
 ./b2                             | tee b2_log.txt
@@ -61,7 +60,7 @@ cd boost/
 cd ..
 
 # FFTW
-echo 'fftw'
+echo 'Installing fftw'
 cd fftw/
 ./configure --prefix=${BASEDIR} --enable-shared --enable-threads --with-pic  | tee config_log.txt
 make -j3                                                                          | tee make_log.txt
@@ -69,17 +68,18 @@ make -j3 install                                                                
 cd ..
 
 # ROOT
-echo 'ROOT'
-cd root/
+pwd
+ls -altr
+echo 'Installing ROOT'
+cd root
 mkdir -p my_build
 cd my_build
-cmake -D CMAKE_INSTALL_PREFIX:PATH=${BASEDIR} -D CMAKE_INSTALL_BINDIR:PATH=${BASEDIR}/bin -D CMAKE_INSTALL_LIBDIR:PATH=${BASEDIR}/lib -D CMAKE_INSTALL_INCLUDEDIR:PATH=${BASEDIR}/include -D gnuinstall=ON -D roofit=ON  -D builtin_gsl=ON -D tmva=ON ..  | tee config_log.txt
+cmake -D CMAKE_INSTALL_PREFIX:PATH=${BASEDIR} -D CMAKE_INSTALL_BINDIR:PATH=${BASEDIR}/bin -D CMAKE_INSTALL_LIBDIR:PATH=${BASEDIR}/lib -D CMAKE_INSTALL_INCLUDEDIR:PATH=${BASEDIR}/include -DPYTHON_EXECUTABLE=/build/bin/python3 -D gnuinstall=ON -D roofit=ON  -D builtin_gsl=ON -D tmva=ON ..  | tee config_log.txt
 make -j3                            | tee make_log.txt
 make -j3                            | tee make_log.txt
 make -j3                            | tee make_log.txt
 make -j3 install                    | tee make_install_log.txt
-cd /src
+cd ../..
 
 # Clean up the source directory
-pwd
-rm -rf *
+rm -rf /src

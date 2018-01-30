@@ -8,7 +8,7 @@
 
 # get into the parent directory for all the source code and build proucts
 mkdir /src
-cd src/
+cd /src
 pwd
 
 # download current (on 2015/09/16) versions of all dependencies
@@ -18,22 +18,32 @@ echo "Download: complete!"
 ls
 
 mv Python-*.tgz Python-x.y.tgz
-tar -xf Python-x.y.tgz                # python
-ln -s Python-x.y.tgz python
+tar -xf Python-x.y.tgz
+rm Python-x.y.tgz
+mv Python-* Python-x.y                # python
+ln -s Python-x.y python
 
 gunzip cmake-3.4.3.tar.gz             # cmake
 tar -xf cmake-3.4.3.tar
+rm cmake-3.4.3.tar
 ln -s cmake-3.4.3 cmake
 
 mv download boost_1_59_0.tar.gz       # boost
 gunzip boost_1_59_0.tar.gz
 tar -xf boost_1_59_0.tar
+rm boost_1_59_0.tar
 ln -s boost_1_59_0 boost
 
 gunzip fftw-3.3.4.tar.gz              # fftw
 tar -xf fftw-3.3.4.tar
+rm fftw-3.3.4.tar
 ln -s fftw-3.3.4 fftw
 
-gunzip root_v6.10.06.source.tar.gz    # root
-tar -xf root_v6.10.06.source.tar
-ln -s root-6.10.06 root
+mv -v root*.source.tar.gz root-x.y.source.tar.gz
+gunzip root-x.y.source.tar.gz         # root
+tar -xf root-x.y.source.tar
+rm root-x.y.source.tar
+mv -v root-* root-x.y
+ln -s root-x.y root
+
+

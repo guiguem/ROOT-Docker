@@ -11,7 +11,7 @@ ADD ./download_pkg.sh /download_pkg_root.sh
 ADD ./setup.sh /setup.sh
 ADD build.sh /build_root.sh
 RUN chmod +x download_pkg_root.sh &&\
-    chmod +x setup.sh &&\
     ./download_pkg_root.sh &&\
+    chmod +x setup.sh &&\
     chmod +x build_root.sh &&\
     ./build_root.sh
