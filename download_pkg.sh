@@ -28,11 +28,9 @@ tar -xf cmake-3.10.2.tar
 rm cmake-3.10.2.tar
 ln -s cmake-3.10.2 cmake
 
-mv download boost_1_59_0.tar.gz       # boost
-gunzip boost_1_59_0.tar.gz
-tar -xf boost_1_59_0.tar
-rm boost_1_59_0.tar
-ln -s boost_1_59_0 boost
+tar -xvzf boost_1_66_0.tar.gz            # boost
+rm boost_1_66_0.tar.gz
+ln -s boost_1_66_0 boost
 
 gunzip fftw-3.3.4.tar.gz              # fftw
 tar -xf fftw-3.3.4.tar
