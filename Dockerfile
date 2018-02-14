@@ -3,7 +3,8 @@ FROM ubuntu:14.04
 RUN apt-get update \
     && apt-get -y upgrade \
     && apt-get -y install \
-    make g++ gcc git libx11-dev libxpm-dev libxft-dev libxext-dev lsb-release locales libxml2-dev libgsl0-dev ccache wget python-dev python-pip
+    make g++ gcc git libx11-dev libxpm-dev libxft-dev libxext-dev lsb-release locales libxml2-dev libgsl0-dev ccache wget python-dev python-pip libssl-dev \
+    && apt-get autoremove
 
 # download
 ADD ./dependency_urls.txt /dependency_urls_root.txt

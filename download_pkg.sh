@@ -23,10 +23,10 @@ rm Python-x.y.tgz
 mv Python-* Python-x.y                # python
 ln -s Python-x.y python
 
-gunzip cmake-3.4.3.tar.gz             # cmake
-tar -xf cmake-3.4.3.tar
-rm cmake-3.4.3.tar
-ln -s cmake-3.4.3 cmake
+gunzip cmake-3.10.2.tar.gz             # cmake
+tar -xf cmake-3.10.2.tar
+rm cmake-3.10.2.tar
+ln -s cmake-3.10.2 cmake
 
 mv download boost_1_59_0.tar.gz       # boost
 gunzip boost_1_59_0.tar.gz
