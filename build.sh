@@ -23,7 +23,10 @@ cd python
 ./configure --enable-shared --prefix=${BASEDIR} | tee config_log.txt
 make -j3                                             | tee make_log.txt
 make -j3 install                                     | tee make_install_log.txt
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py pip setuptools wheel
 cd ..
+
 
 echo "Environment variables after installing python:"
 env
@@ -77,7 +80,7 @@ cd my_build
 cmake -D CMAKE_INSTALL_PREFIX:PATH=${BASEDIR} -D CMAKE_INSTALL_BINDIR:PATH=${BASEDIR}/bin -D CMAKE_INSTALL_LIBDIR:PATH=${BASEDIR}/lib -D CMAKE_INSTALL_INCLUDEDIR:PATH=${BASEDIR}/include -DPYTHON_EXECUTABLE=/build/bin/python -D gnuinstall=ON -D roofit=ON  -D builtin_gsl=ON -D tmva=ON ..  | tee config_log.txt
 make -j3                            | tee make_log.txt
 make -j3                            | tee make_log.txt
-make -j3                            | tee make_log.txt
+make -j1                            | tee make_log.txt
 make -j3 install                    | tee make_install_log.txt
 cd ../..
 

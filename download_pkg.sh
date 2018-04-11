@@ -17,24 +17,22 @@ wget --input-file=/dependency_urls_root.txt --output-file=wget_log.txt --tries=3
 echo "Download: complete!"
 ls
 
-mv Python-*.tgz Python-x.y.tgz
+mv Python-*.tgz Python-x.y.tgz         # python
 tar -xf Python-x.y.tgz
 rm Python-x.y.tgz
-mv Python-* Python-x.y                # python
+mv Python-* Python-x.y                 
 ln -s Python-x.y python
 
-gunzip cmake-3.4.3.tar.gz             # cmake
-tar -xf cmake-3.4.3.tar
-rm cmake-3.4.3.tar
-ln -s cmake-3.4.3 cmake
+gunzip cmake-3.10.2.tar.gz             # cmake
+tar -xf cmake-3.10.2.tar
+rm cmake-3.10.2.tar
+ln -s cmake-3.10.2 cmake
 
-mv download boost_1_59_0.tar.gz       # boost
-gunzip boost_1_59_0.tar.gz
-tar -xf boost_1_59_0.tar
-rm boost_1_59_0.tar
-ln -s boost_1_59_0 boost
+tar -xvzf boost_1_66_0.tar.gz          # boost
+rm boost_1_66_0.tar.gz
+ln -s boost_1_66_0 boost
 
-gunzip fftw-3.3.4.tar.gz              # fftw
+gunzip fftw-3.3.4.tar.gz               # fftw
 tar -xf fftw-3.3.4.tar
 rm fftw-3.3.4.tar
 ln -s fftw-3.3.4 fftw
